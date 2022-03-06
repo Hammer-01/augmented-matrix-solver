@@ -6,3 +6,16 @@
     right: 0;
     margin: auto;
 }
+
+input {
+    border: hidden;
+    text-align: center;
+}
+
+td, th {
+    border: solid;
+}
+
+th {
+    border-left-width: thick;
+}
