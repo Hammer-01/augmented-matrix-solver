@@ -8,14 +8,10 @@
 }
 
 input {
-    border: hidden;
+    border: solid black;
     text-align: center;
 }
 
-td, th {
-    border: solid;
-}
-
 th {
-    border-left-width: thick;
+    border-left: thick solid;
 }
