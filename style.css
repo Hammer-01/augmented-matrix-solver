@@ -11,6 +11,7 @@
 }
 
 input {
+    box-sizing: border-box;
     border: solid black;
     text-align: center;
     width: -moz-available;
