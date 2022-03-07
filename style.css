@@ -12,14 +12,11 @@
 input {
     border: solid black;
     text-align: center;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
 }
-
-/*
-td {
-    width: 25%;
-}*/
 
 th {
     border-left: thick solid;
-    /*width: 25%;*/
 }
