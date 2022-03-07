@@ -23,5 +23,6 @@ input:invalid {
 }
 
 .vl {
-    border-left: thick solid;
+    border-left: thick solid black;
+    height: 20vw;
 }
