@@ -18,6 +18,10 @@ input {
     width: fill-available;
 }
 
+input:invalid {
+    border: solid red;
+}
+
 th {
     border-left: thick solid;
 }
