@@ -5,6 +5,7 @@
     left: 0;
     right: 0;
     margin: auto;
+    table-layout: fixed;
     width: 20vw;
     height: 20vw;
 }
