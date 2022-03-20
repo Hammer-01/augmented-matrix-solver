@@ -21,6 +21,8 @@ AugmentedMatrix.prototype.solve = function(showSteps) {
             if (showSteps) console.log(`Subtract ${stepStr} × row ${a+1} from row ${(a+b)%this.s+1}:\n${this}`);
         }
     }
+    // Convert -0 to 0 (may remove if later conversion automatically converts it)
+    this.m.forEach((r, ri) => {r.forEach((c, ci) => {if (c === -0) {this.m[ri][ci] = 0;}})});
     return this.m;
 };
 
