@@ -5,7 +5,7 @@
     <title>Augmented Matrix Solver</title>
     <script src="augmentedMatrixSolver.js"></script>
     <script>
-      var solveMatrix = function() {
+      var solveMatrix = function(showSteps) {
         let table = document.getElementById('matrix');
         let inputMatrix = [];
         for (var r = 0, n = table.rows.length; r < n; r++) {
@@ -18,7 +18,7 @@
         }
 
         var matrix = new AugmentedMatrix(inputMatrix);
-        console.log(matrix.solve());
+        console.log(matrix.solve(showSteps));
       };
     </script>
     <link rel="stylesheet" type="text/css" href="style.css">
