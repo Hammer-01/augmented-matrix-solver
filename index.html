@@ -4,6 +4,23 @@
   <head>
     <title>Augmented Matrix Solver</title>
     <script src="augmentedMatrixSolver.js"></script>
+    <script>
+      var solveMatrix = function() {
+        let table = document.getElementById('matrix');
+        let inputMatrix = [];
+        for (var r = 0, n = table.rows.length; r < n; r++) {
+          inputMatrix.push([]);
+          for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
+            if (table.rows[r].cells[c].children[0]) {
+              inputMatrix[r].push(parseFloat(table.rows[r].cells[c].children[0].value.split('/').reduce((n, d, i) => n / (i ? d : 1))) || 0);
+            }
+          }
+        }
+
+        var matrix = new AugmentedMatrix(inputMatrix);
+        console.log(matrix.solve());
+      };
+    </script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
@@ -31,20 +48,5 @@
         <th><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="constant"></th>
       </tr>
     </table>
-    <script>
-      let table = document.getElementById('matrix');
-      let inputMatrix = [];
-      for (var r = 0, n = table.rows.length; r < n; r++) {
-        inputMatrix.push([]);
-        for (var c = 0, m = table.rows[r].cells.length; c < m; c++) {
-          if (table.rows[r].cells[c].children[0]) {
-            inputMatrix[r].push(parseFloat(table.rows[r].cells[c].children[0].value.split('/').reduce((n, d, i) => n / (i ? d : 1))) || 0);
-          }
-        }
-      }
-      
-      var matrix = new AugmentedMatrix(inputMatrix);
-      console.log(matrix.solve());
-    </script>
   </body>
 </html>
