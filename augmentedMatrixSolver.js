@@ -27,13 +27,13 @@ AugmentedMatrix.prototype.solve = function(showSteps) {
 };
 
 AugmentedMatrix.prototype.mul = function(row) {
-    let num = 1 / this.m[row][row];
+    let num = parseFloat((1 / this.m[row][row]).toPrecision(15)); // fix floating point arithmetic rounding error
     if (!isFinite(num)) return; // skip if this.m[row][row] is 0 (caused by infinite solutions)
     this.m[row].forEach((x, i) => this.m[row][i] *= num);
 };
 
 AugmentedMatrix.prototype.sub = function(row1, row2) {
-    let num = this.m[row1][row2];
+    let num = parseFloat(this.m[row1][row2].toPrecision(15)); // fix floating point arithmetic rounding error
     this.m[row1].forEach((x, i) => this.m[row1][i] -= num * this.m[row2][i]);
 };
 
