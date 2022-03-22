@@ -19,34 +19,39 @@
 
         var matrix = new AugmentedMatrix(inputMatrix);
         console.log(matrix.solve(showSteps));
+        return matrix;
       };
     </script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div class="vl"></div>
-    <table id=matrix>
-      <tr>
-        <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="x"></td>
-        <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="y"></td>
-        <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="z"></td>
-        <td width="1px"></td>
-        <th><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="constant"></th>
-      </tr>
-      <tr>
-        <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="x"></td>
-        <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="y"></td>
-        <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="z"></td>
-        <td width="1px"></td>
-        <th><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="constant"></th>
-      </tr>
-      <tr>
-        <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="x"></td>
-        <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="y"></td>
-        <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="z"></td>
-        <td width="1px"></td>
-        <th><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="constant"></th>
-      </tr>
-    </table>
+    <form action="javascript:alert(solveMatrix(true))">
+      <table id=matrix>
+        <tr>
+          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="x"></td>
+          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="y"></td>
+          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="z"></td>
+          <td width="1px"></td>
+          <th><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="constant"></th>
+        </tr>
+        <tr>
+          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="x"></td>
+          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="y"></td>
+          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="z"></td>
+          <td width="1px"></td>
+          <th><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="constant"></th>
+        </tr>
+        <tr>
+          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="x"></td>
+          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="y"></td>
+          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="z"></td>
+          <td width="1px"></td>
+          <th><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="constant"></th>
+        </tr>
+      </table>
+      <input type="submit" value="Solve">
+      <input type="reset" value="Clear">
+    </form>
   </body>
 </html>
