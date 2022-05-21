@@ -8,9 +8,10 @@ var AugmentedMatrix = function(matrix) {
     }
 };
 
-AugmentedMatrix.prototype.solve = function(showSteps) {
+AugmentedMatrix.prototype.solve = function(showSteps, log) {
+    log ||= console.log;
     let stepStr; // a temporary string to hold the values that will change after each step (used with showSteps)
-    if (showSteps) console.log(`Starting Matrix:\n${this}`);
+    if (showSteps) log(`Starting Matrix:\n${this}`);
     for (let a = 0; a < this.s; a++) {
         stepStr = this.m[a][a];
         this.mul(a);
@@ -18,7 +19,7 @@ AugmentedMatrix.prototype.solve = function(showSteps) {
         for (let b = 1; b < this.s; b++) {
             stepStr = this.m[(a+b)%this.s][a];
             this.sub((a + b) % this.s, a);
-            if (showSteps) console.log(`Subtract ${stepStr} × row ${a+1} from row ${(a+b)%this.s+1}:\n${this}`);
+            if (showSteps) log(`Subtract ${stepStr} × row ${a+1} from row ${(a+b)%this.s+1}:\n${this}`);
         }
     }
     // Convert -0 to 0 (may remove if later conversion automatically converts it)
