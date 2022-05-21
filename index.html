@@ -27,7 +27,7 @@
         var matrix = new AugmentedMatrix(inputMatrix);
         solutionDiv = document.getElementById('solution');
         solutionDiv.innerHTML = '';
-        log('Solution:\n[' + matrix.solve(true, log).replaceAll('\n', ']\n[') + ']');
+        log('Solution:\n[' + matrix.solve(true, log).toString().replaceAll('\n', ']\n[') + ']');
       };
     </script>
     <link rel="stylesheet" type="text/css" href="style.css">
