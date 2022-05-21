@@ -15,7 +15,7 @@ AugmentedMatrix.prototype.solve = function(showSteps, log) {
     for (let a = 0; a < this.s; a++) {
         stepStr = this.m[a][a];
         this.mul(a);
-        if (showSteps && stepStr) console.log(`Multiply row ${a+1} by 1/${stepStr}:\n${this}`);
+        if (showSteps && stepStr) log(`Multiply row ${a+1} by 1/${stepStr}:\n${this}`);
         for (let b = 1; b < this.s; b++) {
             stepStr = this.m[(a+b)%this.s][a];
             this.sub((a + b) % this.s, a);
@@ -24,7 +24,7 @@ AugmentedMatrix.prototype.solve = function(showSteps, log) {
     }
     // Convert -0 to 0 (may remove if later conversion automatically converts it)
     this.m.forEach((r, ri) => {r.forEach((c, ci) => {if (c === -0) {this.m[ri][ci] = 0;}})});
-    return this.m;
+    return this;
 };
 
 AugmentedMatrix.prototype.mul = function(row) {
