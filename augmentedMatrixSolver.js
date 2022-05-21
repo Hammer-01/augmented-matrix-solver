@@ -1,3 +1,5 @@
+// TODO: add better fraction handling (using oop? or strings as input then oop?)
+
 var AugmentedMatrix = function(matrix) {
     this.m = matrix || [[1,0,0,0],[0,1,0,0],[0,0,1,0]]; // defaults to x=0, y=0, z=0
     this.s = this.m.length; // size of the matrix
