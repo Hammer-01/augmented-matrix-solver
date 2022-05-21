@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,7 +8,7 @@
       var solutionDiv;
       var log = function(str) {
         let p = document.createElement('p');
-        p.appendChild(document.createTextNode(str));
+        p.innerHTML = str.replaceAll('\n', '<br>');
         solutionDiv.appendChild(p);
       }
       
@@ -25,11 +24,10 @@
           }
         }
         
-
         var matrix = new AugmentedMatrix(inputMatrix);
         solutionDiv = document.getElementById('solution');
         solutionDiv.innerHTML = '';
-        log(matrix.solve(true, log));
+        log('Solution:\n[' + matrix.solve(true, log).replaceAll('\n', ']\n[') + ']');
       };
     </script>
     <link rel="stylesheet" type="text/css" href="style.css">
