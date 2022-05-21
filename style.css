@@ -1,4 +1,4 @@
-#matrix {
+form, #matrix {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -11,18 +11,32 @@
 }
 
 input {
-    border: solid black;
-    text-align: center;
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
+}
+
+input[inputmode=numeric] {
+    border: solid black;
+    text-align: center;
 }
 
 input:invalid {
     border: solid red;
 }
 
+input[type=submit] {
+    margin: 15px 4vw 10px;
+}
+
+input[type=reset] {
+    margin: 0px 4vw;
+}
+
 .vl {
     border-left: thick solid black;
-    height: 20vw;
+    height: 18vw;
+    position: relative;
+    top: 1vw;
+    left: 14.5vw;
 }
