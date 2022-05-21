@@ -6,7 +6,14 @@
     <!-- <script src="https://cdn.jsdelivr.net/gh/hammer-01/hammer-01.github.io/tracking.js"></script> -->
     <script src="augmentedMatrixSolver.js"></script>
     <script>
-      var solveMatrix = function(showSteps) {
+      var solutionDiv = document.getElementById('solution');
+      var log = function(str) {
+        let p = document.createElement('p');
+        p.appendChild(document.createTextNode(str));
+        solutionDiv.appendChild(p);
+      }
+      
+      var solveMatrix = function() {
         let table = document.getElementById('matrix');
         let inputMatrix = [];
         for (var r = 0, n = table.rows.length; r < n; r++) {
@@ -17,38 +24,39 @@
             }
           }
         }
+        
 
         var matrix = new AugmentedMatrix(inputMatrix);
-        console.log(matrix.solve(showSteps));
-        return matrix;
+        solutionDiv.innerHTML = '';
+        log(matrix.solve(showSteps, log));
       };
     </script>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <form action="javascript:alert(solveMatrix(true))">
+    <form action="javascript:solveMatrix()">
       <div class="vl"></div>
       <table id=matrix>
         <tr>
-          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="x"></td>
-          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="y"></td>
-          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="z"></td>
+          <td><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="x"></td>
+          <td><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="y"></td>
+          <td><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="z"></td>
           <td width="1px"></td>
-          <th><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="constant"></th>
+          <th><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="constant"></th>
         </tr>
         <tr>
-          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="x"></td>
-          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="y"></td>
-          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="z"></td>
+          <td><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="x"></td>
+          <td><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="y"></td>
+          <td><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="z"></td>
           <td width="1px"></td>
-          <th><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="constant"></th>
+          <th><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="constant"></th>
         </tr>
         <tr>
-          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="x"></td>
-          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="y"></td>
-          <td><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="z"></td>
+          <td><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="x"></td>
+          <td><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="y"></td>
+          <td><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="z"></td>
           <td width="1px"></td>
-          <th><input inputmode="numeric" pattern="[+-]?(\d+(\.\d*)?|\.\d+)" title="constant"></th>
+          <th><input inputmode="numeric" pattern="^([+-]?(\d+(\.\d*)?|\.\d+)\/?)*[+-]?(\d+(\.\d*)?|\.\d+)$" title="constant"></th>
         </tr>
       </table>
       <input type="submit" value="Solve">
