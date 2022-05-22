@@ -26,7 +26,7 @@ input:invalid {
 }
 
 input[type=submit] {
-    margin: 15px 4vw 10px;
+    margin: 30px 4vw 10px;
 }
 
 input[type=reset] {
